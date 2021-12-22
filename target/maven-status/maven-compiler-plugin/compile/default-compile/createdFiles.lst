@@ -1,0 +1,5 @@
+TrainSim\modelo\EstacionTren.class
+TrainSim\vista\simView.class
+TrainSim\controlador\App.class
+TrainSim\modelo\Grafo.class
+TrainSim\modelo\Stack.class
