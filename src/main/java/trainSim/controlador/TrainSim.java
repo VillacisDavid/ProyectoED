@@ -18,9 +18,12 @@ public class TrainSim {
     private Grafo g;
     
     public TrainSim() throws IOException{
-        
         this.g = new Grafo();
         
+    }
+    
+    public void infoGrafo(){
+        this.g.mostrarGrafo();   
     }
     
     public void mostrarMapa(){
@@ -30,11 +33,11 @@ public class TrainSim {
     
     public EstacionTren getRuta(String origen, String destino){
         
-        ArrayList<EstacionTren> a = g.getEstaciones();
-        Integer[][] b = g.getRelaciones();
+        ArrayList<EstacionTren> e = g.getEstaciones();
+        Integer[][] rel = g.getRelaciones();
         EstacionTren lista = new EstacionTren();
         
-        // Algoritmo de busqueda que devuelva
+        // Algoritmo de busqueda
         
         
         return lista;
