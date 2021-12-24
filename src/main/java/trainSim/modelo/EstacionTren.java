@@ -7,10 +7,11 @@ import javax.lang.model.SourceVersion;
  *
  * @author David
  */
-public class EstacionTren {
+public class EstacionTren { //nodo estacion
     private String name;
     private Float xPos;
     private Float yPos;
+    public EstacionTren siguiente;
 
     public EstacionTren() {
     }

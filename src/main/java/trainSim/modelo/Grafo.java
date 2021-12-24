@@ -14,16 +14,10 @@ public class Grafo {
     private int size;
     private ArrayList<EstacionTren> estaciones = new ArrayList<EstacionTren>();
     private Integer[][] relaciones;
-    private Integer[][] pesos;
     
     
     public Grafo() throws IOException{
         this.abrirGrafo();
-    }   
-    
-    public void Astar(){
-        
-        
     }
     
     public void abrirGrafo() throws IOException{
@@ -39,27 +33,20 @@ public class Grafo {
                 e.setxPos(scanner.nextFloat());
                 e.setyPos(scanner.nextFloat());
                 e.setName(scanner.next());
-                estaciones.add(e);
+                getEstaciones().add(e);
             }
             
             //Recuperar relaciones
-            relaciones = new Integer[size][size];
+            setRelaciones(new Integer[size][size]);
             for(int i=0; i<size;i++){
                 for(int j=0; j<size;j++){
-                    relaciones[i][j] = scanner.nextInt();
-                }
-            }
-            
-            //Recuperar pesos
-            pesos = new Integer[size][size];
-            for(int i=0; i<size;i++){
-                for(int j=0; j<size;j++){
-                    pesos[i][j] = scanner.nextInt();
+                    getRelaciones()[i][j] = scanner.nextInt();
                 }
             }
             
             scanner.close();
             System.out.println("Grafo cargado con exito");
+            
         }catch(IOException e){
             System.out.println("error");
             System.out.println(e.getStackTrace());
@@ -69,9 +56,9 @@ public class Grafo {
     public void mostrarGrafo(){
         
         for(int i=0; i<size;i++){
-            System.out.println(estaciones.get(i).getName()+
-                    " x = " + estaciones.get(i).getxPos() +
-                    " y = " + estaciones.get(i).getyPos() );
+            System.out.println(getEstaciones().get(i).getName()+
+                    " x = " + getEstaciones().get(i).getxPos() +
+                    " y = " + getEstaciones().get(i).getyPos() );
         }
         
         System.out.println("Matriz de relaciones:");
@@ -79,19 +66,41 @@ public class Grafo {
         for(int i=0; i<size;i++){
             String line = "";
             for(int j=0; j<size;j++){
-                    line = line + relaciones[i][j].toString() + " ";
+                    line = line + getRelaciones()[i][j].toString() + " ";
             }
             System.out.println(line);
         }
         
-        System.out.println("Matriz de pesos:");
         
-        for(int i=0; i<size;i++){
-            String line = "";
-            for(int j=0; j<size;j++){
-                    line = line + pesos[i][j].toString() + " ";
-            }
-            System.out.println(line);
-        }
     }
+
+    /**
+     * @return the estaciones
+     */
+    public ArrayList<EstacionTren> getEstaciones() {
+        return estaciones;
+    }
+
+    /**
+     * @param estaciones the estaciones to set
+     */
+    public void setEstaciones(ArrayList<EstacionTren> estaciones) {
+        this.estaciones = estaciones;
+    }
+
+    /**
+     * @return the relaciones
+     */
+    public Integer[][] getRelaciones() {
+        return relaciones;
+    }
+
+    /**
+     * @param relaciones the relaciones to set
+     */
+    public void setRelaciones(Integer[][] relaciones) {
+        this.relaciones = relaciones;
+    }
+    
+    
 }
