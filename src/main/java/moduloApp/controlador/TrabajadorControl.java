@@ -42,7 +42,7 @@ public class TrabajadorControl {
         inicio.setLocationRelativeTo(null);
         
         /*
-        *   Labels
+        *   Label
         */
         inicio.lblBienvenido.setText("Bienvenido, "+currentUser.getNombre());  
         

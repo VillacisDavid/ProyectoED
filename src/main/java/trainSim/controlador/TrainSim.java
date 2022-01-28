@@ -33,7 +33,6 @@ public class TrainSim {
         seleccionar = new SeleccionRuta();
         seleccionar.setLocationRelativeTo(null);
         seleccionar.setVisible(true);
-        seleccionar.setAlwaysOnTop(true);
         /*
         *   Label: imagen del mapa del grafo
         */
@@ -69,9 +68,7 @@ public class TrainSim {
         crear = new CrearRuta();
         stackEstaciones stack = new stackEstaciones();
         crear.setLocationRelativeTo(null);
-        crear.setVisible(true);
-        crear.setAlwaysOnTop(true);
-        
+        crear.setVisible(true);        
         
         /*
         *   Label: imagen del mapa del grafo

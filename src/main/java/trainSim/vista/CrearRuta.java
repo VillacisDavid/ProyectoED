@@ -95,9 +95,7 @@ public class CrearRuta extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(lblMapa)
-                .addGap(492, 492, 492))
+            .addComponent(lblMapa, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
         );
 
         jScrollPane2.setViewportView(jPanel1);
