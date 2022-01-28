@@ -10,7 +10,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
             </goals>
             <properties>
-                <exec.args>-classpath %classpath trainSim.controlador.App</exec.args>
+                <exec.args>-classpath %classpath main.AppMain</exec.args>
                 <exec.executable>java</exec.executable>
                 <exec.workingdir>C:\Users\David\OneDrive\Documents\ED\ProyectoED-2021-2\src\main\java</exec.workingdir>
             </properties>
@@ -25,7 +25,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
             </goals>
             <properties>
-                <exec.args>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath trainSim.controlador.App</exec.args>
+                <exec.args>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath main.AppMain</exec.args>
                 <exec.executable>java</exec.executable>
                 <jpda.listen>true</jpda.listen>
                 <exec.workingdir>C:\Users\David\OneDrive\Documents\ED\ProyectoED-2021-2\src\main\java</exec.workingdir>
@@ -41,7 +41,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
             </goals>
             <properties>
-                <exec.args>-classpath %classpath trainSim.controlador.App</exec.args>
+                <exec.args>-classpath %classpath main.AppMain</exec.args>
                 <exec.executable>java</exec.executable>
                 <exec.workingdir>C:\Users\David\OneDrive\Documents\ED\ProyectoED-2021-2\src\main\java</exec.workingdir>
             </properties>

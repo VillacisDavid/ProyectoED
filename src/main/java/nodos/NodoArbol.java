@@ -22,4 +22,5 @@ public class NodoArbol implements Serializable{
         hijo = null;
         hermano = null;
     }
+    
 }

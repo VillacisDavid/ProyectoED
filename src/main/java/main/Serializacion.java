@@ -119,7 +119,7 @@ public class Serializacion {
         ArrayList<Usuario> tempUsuarios = new ArrayList();
 
 
-
+        Cliente cliente01 = new Cliente("78154265", "Miguel Abel");
  
         /*tempUsuarios.add(u06);
         tempUsuarios.add(u07);
@@ -127,7 +127,7 @@ public class Serializacion {
         tempUsuarios.add(u09);
         tempUsuarios.add(u10);
 
-        tempUsuarios.add(u11);*/
+        tempUsuarios.add(u11);*/        
 
 //         Pas1:
 //        SERIALIZACIÓN
