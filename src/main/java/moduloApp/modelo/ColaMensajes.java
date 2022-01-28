@@ -2,7 +2,7 @@ package moduloApp.modelo;
 
 /**
  *
- * @author David Villacis Alvear
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  * inserta al final y elimina del inicio
  */
 public class ColaMensajes implements java.io.Serializable {

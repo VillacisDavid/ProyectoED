@@ -5,7 +5,7 @@ import moduloLogin.controlador.LoginControl;
 
 /**
  *
- * @author David
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  */
 public class AppMain{
     public static void main(String[] args) {

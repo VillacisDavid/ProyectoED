@@ -8,7 +8,7 @@ package moduloApp.vista;
 
 /**
  *
- * @author David
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  */
 public class InicioTrabajador extends javax.swing.JFrame {
 

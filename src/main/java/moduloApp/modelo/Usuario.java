@@ -3,7 +3,7 @@ package moduloApp.modelo;
 
 /**
  *
- * @author David
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  */
 public abstract class Usuario {
     private final Integer userID;

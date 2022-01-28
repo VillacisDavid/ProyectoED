@@ -12,20 +12,19 @@ import moduloApp.modelo.*;
 //  Importar para volver al login al cerrar sesion
 import moduloLogin.controlador.LoginControl;
 
-
 //  Importar Simulador
 import trainSim.controlador.TrainSim;
 
 /**
  *
- * @author David
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  */
 public class ClienteControl{
     private InicioCliente inicio = new InicioCliente();
     private Cliente currentUser;
     private TrainSim ts;
     private ColaMensajes cola;
-    Serializador serial = new Serializador();
+    private Serializador serial = new Serializador();
     
     public ClienteControl(Cliente User) throws IOException{
         try{
@@ -75,7 +74,7 @@ public class ClienteControl{
         /*
         *   Accion del boton Recargar tarjeta
         */
-        inicio.btnRecarga.addActionListener((ActionEvent a) -> {
+        inicio.btnVecCompra.addActionListener((ActionEvent a) -> {
             inicio.setVisible(false);
             inicio.setVisible(true);
             

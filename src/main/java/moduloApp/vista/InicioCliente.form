@@ -53,7 +53,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="btnRecarga" max="32767" attributes="0"/>
+                      <Component id="btnVecCompra" max="32767" attributes="0"/>
                       <Component id="btnRutaDjikstra" max="32767" attributes="0"/>
                       <Component id="btnCrearRuta" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnContacto" alignment="0" max="32767" attributes="0"/>
@@ -77,7 +77,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnCrearRuta" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnRecarga" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnVecCompra" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnContacto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="275" max="32767" attributes="0"/>
@@ -125,9 +125,9 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btnRecarga">
+        <Component class="javax.swing.JButton" name="btnVecCompra">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Recargar tarjeta"/>
+            <Property name="text" type="java.lang.String" value="Ver compras"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

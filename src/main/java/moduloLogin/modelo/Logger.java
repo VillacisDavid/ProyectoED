@@ -10,9 +10,11 @@ import moduloApp.modelo.Trabajador;
 
 /**
  *
- * @author David
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  */
 public class Logger {
+    
+    //psql.exe -h ec2-54-158-247-97.compute-1.amazonaws.com -d dajfiu8makf9b7 -U diewcvprxifcwd
     
     private int logAsUserType=-1;
     private int userID=-1;
@@ -161,7 +163,7 @@ public class Logger {
         return t;
     }
     
-    public void crearUsuario(String nombre, int dni, String usuario, int tipo, String contrasena){
+    public void crearUsuario(String nombre, int dni, String usuario, int tipo, String contrasena) throws SQLException{
         int newid;
         String tarjeta = "-";
         conectarDB(Driver, DB_URL, USER, PASSW);

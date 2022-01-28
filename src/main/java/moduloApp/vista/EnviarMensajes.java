@@ -7,7 +7,7 @@ package moduloApp.vista;
 
 /**
  *
- * @author David Villacis Alvear
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  */
 public class EnviarMensajes extends javax.swing.JFrame {
 

@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author David Villacis Alvear
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  */
 public class Mensaje implements Serializable {
     private String emisor;

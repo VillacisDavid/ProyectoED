@@ -3,7 +3,9 @@ package moduloApp.controlador;
 
 import java.awt.event.ActionEvent;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import javax.swing.JOptionPane;
 
 import moduloLogin.controlador.LoginControl;
@@ -16,7 +18,7 @@ import trainSim.controlador.TrainSim;
 
 /**
  *
- * @author David
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  */
 public class TrabajadorControl {
     private InicioTrabajador inicio = new InicioTrabajador();
@@ -24,7 +26,7 @@ public class TrabajadorControl {
     private Trabajador currentUser;
     private TrainSim ts;  
     private ColaMensajes cola;
-    Serializador serial = new Serializador();
+    private Serializador serial = new Serializador();
     
     public TrabajadorControl(Trabajador User) throws IOException {
         try{
@@ -138,26 +140,35 @@ public class TrabajadorControl {
             cu.setLocationRelativeTo(null);
             //accion del boton crear usuario
             cu.btnCrear.addActionListener((ActionEvent c) -> {
-                
-                //Falta validacion de campos
-                
-                String nombre = cu.txtNombre.getText();
-                int dni = Integer.parseInt(cu.txtDNI.getText());
-                String usuario = cu.txtUsername.getText();
-                int tipo;
-                if(cu.cbxIsAdmin.isSelected()){
-                    tipo=1;
-                }else{
-                    tipo=0;
-                }
-                if(Arrays.equals(cu.pwfContrasena1.getPassword(), cu.pwfContrasena2.getPassword())){
-                    String contrasena = new String(cu.pwfContrasena1.getPassword());
-                    //El logger crea el usuario
-                    logger.crearUsuario(nombre, dni, usuario, tipo, contrasena);
-                    cu.dispose();
-                    inicio.setVisible(true);
-                }else{
-                    JOptionPane.showMessageDialog(null,"Las contraseñas ingresadas no coinciden");
+                try{
+                    String nombre = cu.txtNombre.getText();
+                    if(nombre.equals(""))
+                        throw new SQLException();
+                    int dni = Integer.parseInt(cu.txtDNI.getText());
+                    String usuario = cu.txtUsername.getText();
+                    if(usuario.equals(""))
+                        throw new SQLException();
+                    int tipo;
+                    if(cu.cbxIsAdmin.isSelected()){
+                        tipo=1;
+                    }else{
+                        tipo=0;
+                    }
+                    if(Arrays.equals(cu.pwfContrasena1.getPassword(), cu.pwfContrasena2.getPassword())){
+                        String contrasena = new String(cu.pwfContrasena1.getPassword());
+                        if(contrasena.equals(""))
+                            throw new SQLException();
+                        //El logger crea el usuario
+                        logger.crearUsuario(nombre, dni, usuario, tipo, contrasena);
+                        cu.dispose();
+                        inicio.setVisible(true);
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Las contraseñas ingresadas no coinciden");
+                    }
+                }catch(SQLException e){
+                    JOptionPane.showMessageDialog(null,"Rellenar todos los campos");
+                }catch(NumberFormatException e){
+                    JOptionPane.showMessageDialog(null,"DNI invalido");
                 }
             });
             

@@ -7,7 +7,7 @@ package moduloApp.vista;
 
 /**
  *
- * @author David
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  */
 public class CrearUsuario extends javax.swing.JFrame {
 

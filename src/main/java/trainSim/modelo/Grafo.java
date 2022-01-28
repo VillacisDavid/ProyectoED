@@ -8,11 +8,11 @@ import java.util.ArrayList;
 
 /**
  *
- * @author David
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  */
 public class Grafo {
     private int size;
-    private ArrayList<EstacionTren> estaciones = new ArrayList<EstacionTren>();
+    private ArrayList<EstacionTren> estaciones = new ArrayList<>();
     private Integer[][] relaciones;
     private Integer[][] pesos;
     

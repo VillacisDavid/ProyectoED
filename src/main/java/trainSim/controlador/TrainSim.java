@@ -107,12 +107,12 @@ public class TrainSim {
         */
         crear.btnDeshacer.addActionListener((ActionEvent e) -> {
             stack.popDelete();
+            //manejar combo box
             if(stack.getLongitud()>1){
                 int index = g.getIndexOf(stack.top().getName());
                 // Vaciar combobox
                 crear.cbxParadas.removeAllItems();
                 //rellenarlo con posibles paradas
-
                 for(int i=0; i < g.getSize();i++){
                     if(g.getRelaciones()[index][i]==1){
                         crear.cbxParadas.addItem(g.getEstaciones().get(i).getName());

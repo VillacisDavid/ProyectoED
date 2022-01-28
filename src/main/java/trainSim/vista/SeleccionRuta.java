@@ -177,7 +177,7 @@ public class SeleccionRuta extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnComprar;
+    public javax.swing.JButton btnComprar;
     public javax.swing.JButton btnObtenerRuta;
     public javax.swing.JButton btnVolver;
     public javax.swing.JComboBox<String> cbxDestino;

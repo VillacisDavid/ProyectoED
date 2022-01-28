@@ -175,7 +175,7 @@ public class CrearRuta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAgregarEstacion;
-    private javax.swing.JButton btnComprar;
+    public javax.swing.JButton btnComprar;
     public javax.swing.JButton btnDeshacer;
     public javax.swing.JButton btnVolver;
     public javax.swing.JComboBox<String> cbxParadas;

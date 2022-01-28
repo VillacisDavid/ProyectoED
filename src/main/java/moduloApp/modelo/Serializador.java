@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 
 /**
  *
- * @author David Villacis Alvear
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  */
 public class Serializador {
     

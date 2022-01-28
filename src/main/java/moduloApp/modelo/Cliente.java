@@ -3,7 +3,7 @@ package moduloApp.modelo;
 
 /**
  *
- * @author David
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  */
 public class Cliente extends Usuario{
     private final String tarjeta;

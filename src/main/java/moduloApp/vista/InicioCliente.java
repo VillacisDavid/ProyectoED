@@ -8,7 +8,7 @@ package moduloApp.vista;
 
 /**
  *
- * @author David
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  */
 public class InicioCliente extends javax.swing.JFrame {
 
@@ -37,7 +37,7 @@ public class InicioCliente extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         btnRutaDjikstra = new javax.swing.JButton();
         btnCrearRuta = new javax.swing.JButton();
-        btnRecarga = new javax.swing.JButton();
+        btnVecCompra = new javax.swing.JButton();
         btnContacto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,7 +56,7 @@ public class InicioCliente extends javax.swing.JFrame {
 
         btnCrearRuta.setText("Crear ruta");
 
-        btnRecarga.setText("Recargar tarjeta");
+        btnVecCompra.setText("Ver compras");
 
         btnContacto.setText("Contactenos");
 
@@ -74,7 +74,7 @@ public class InicioCliente extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnRecarga, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnVecCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRutaDjikstra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCrearRuta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnContacto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -94,7 +94,7 @@ public class InicioCliente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnCrearRuta)
                 .addGap(18, 18, 18)
-                .addComponent(btnRecarga)
+                .addComponent(btnVecCompra)
                 .addGap(18, 18, 18)
                 .addComponent(btnContacto)
                 .addContainerGap(275, Short.MAX_VALUE))
@@ -125,8 +125,8 @@ public class InicioCliente extends javax.swing.JFrame {
     public javax.swing.JButton Logout;
     public javax.swing.JButton btnContacto;
     public javax.swing.JButton btnCrearRuta;
-    public javax.swing.JButton btnRecarga;
     public javax.swing.JButton btnRutaDjikstra;
+    public javax.swing.JButton btnVecCompra;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JLabel lblBienvenido;

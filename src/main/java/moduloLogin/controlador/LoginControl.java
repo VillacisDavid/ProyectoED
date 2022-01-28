@@ -15,7 +15,7 @@ import moduloApp.controlador.TrabajadorControl;
 
 /**
  *
- * @author David
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  */
 public class LoginControl {
     
