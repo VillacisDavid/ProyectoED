@@ -106,8 +106,8 @@ public class Grafo {
         
     }
     
-    public ListaEstaciones dijkstra(String salida, String destino){
-        ListaEstaciones lista = new ListaEstaciones(); 
+    public stackEstaciones dijkstra(String salida, String destino){
+        stackEstaciones lista = new stackEstaciones(); 
         /*
         *   Extraer indices de las estaciones
         */
@@ -121,8 +121,8 @@ public class Grafo {
         
         //  To do
         
-        lista.insertar(estaciones.get(iOrigen));
-        lista.insertar(estaciones.get(iDestino));
+        lista.push(estaciones.get(iOrigen));
+        lista.push(estaciones.get(iDestino));
         
         
         return lista;
@@ -140,7 +140,6 @@ public class Grafo {
                 indice=i;
             }
         }
-        
         return indice;
     }
 

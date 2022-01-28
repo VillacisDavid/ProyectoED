@@ -20,7 +20,7 @@ public class TrainSim {
     private Grafo g = new Grafo();
     private SeleccionRuta seleccionar;
     private CrearRuta crear;
-    ListaEstaciones lista = new ListaEstaciones();
+    stackEstaciones stack = new stackEstaciones();
     
     
     public TrainSim() throws IOException{
@@ -56,9 +56,9 @@ public class TrainSim {
             final String destino = (String)seleccionar.cbxDestino.getSelectedItem();
             
             // Obtener lista
-            lista = g.dijkstra(origen, destino);
+            stack = g.dijkstra(origen, destino);
             Integer distancia = g.getPesos()[g.getIndexOf(origen)][g.getIndexOf(destino)];
-            seleccionar.txtRuta.setText(lista.mostrar()+distancia.toString());
+            seleccionar.txtRuta.setText(stack.mostrar()+distancia.toString());
             seleccionar.txtRuta.setEditable(false);
             
         });
@@ -67,7 +67,7 @@ public class TrainSim {
     
     public void initCrearRuta() {
         crear = new CrearRuta();
-        ListaEstaciones lista = new ListaEstaciones();
+        stackEstaciones stack = new stackEstaciones();
         crear.setLocationRelativeTo(null);
         crear.setVisible(true);
         crear.setAlwaysOnTop(true);
@@ -89,20 +89,50 @@ public class TrainSim {
         *   Accion del boton Agregar parada
         */
         crear.btnAgregarEstacion.addActionListener((ActionEvent e) -> {
-            //  To do
             Integer itemindex = g.getIndexOf((String)crear.cbxParadas.getSelectedItem());
-            lista.insertar(g.getEstaciones().get(itemindex));
+            stack.push(g.getEstaciones().get(itemindex));
             
             // Vaciar combobox
             crear.cbxParadas.removeAllItems();
             //rellenarlo con posibles paradas
             for(int i=0; i < g.getSize();i++){
-                if(g.getRelaciones()[itemindex][i]==1 ){
+                if(g.getRelaciones()[itemindex][i]==1){
                     crear.cbxParadas.addItem(g.getEstaciones().get(i).getName());
                 }
             }
             //mostrar en el area de texto
-            crear.jTextArea1.setText(lista.mostrar());
+            crear.jTextArea1.setText(stack.mostrar());
+            
+        });
+        
+        /*
+        *   Accion del boton deshacer
+        */
+        crear.btnDeshacer.addActionListener((ActionEvent e) -> {
+            stack.popDelete();
+            if(stack.getLongitud()>1){
+                int index = g.getIndexOf(stack.top().getName());
+                // Vaciar combobox
+                crear.cbxParadas.removeAllItems();
+                //rellenarlo con posibles paradas
+
+                for(int i=0; i < g.getSize();i++){
+                    if(g.getRelaciones()[index][i]==1){
+                        crear.cbxParadas.addItem(g.getEstaciones().get(i).getName());
+                    }
+                }
+                //mostrar en el area de texto
+                crear.jTextArea1.setText(stack.mostrar());
+            }else{
+                // Vaciar combobox
+                crear.cbxParadas.removeAllItems();
+                //rellenar con todas las estaciones
+                for(EstacionTren estacion: g.getEstaciones()){
+                    crear.cbxParadas.addItem(estacion.getName());
+                }
+                //mostrar en el area de texto
+                crear.jTextArea1.setText(stack.mostrar());
+            }
             
         });
         

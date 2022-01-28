@@ -40,6 +40,7 @@ public class CrearRuta extends javax.swing.JFrame {
         cbxParadas = new javax.swing.JComboBox<>();
         btnAgregarEstacion = new javax.swing.JButton();
         btnComprar = new javax.swing.JButton();
+        btnDeshacer = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -65,7 +66,7 @@ public class CrearRuta extends javax.swing.JFrame {
                 .addComponent(btnVolver)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel3)
-                .addContainerGap(720, Short.MAX_VALUE))
+                .addContainerGap(940, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,11 +77,12 @@ public class CrearRuta extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(jLabel3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel2);
 
+        lblMapa.setText(null);
         lblMapa.setToolTipText("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -89,13 +91,13 @@ public class CrearRuta extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(lblMapa)
-                .addGap(0, 728, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(lblMapa)
-                .addGap(0, 301, Short.MAX_VALUE))
+                .addGap(492, 492, 492))
         );
 
         jScrollPane2.setViewportView(jPanel1);
@@ -113,35 +115,40 @@ public class CrearRuta extends javax.swing.JFrame {
             }
         });
 
+        btnDeshacer.setText("Deshacer");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(244, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(33, 33, 33)
+                .addGap(26, 26, 26)
                 .addComponent(cbxParadas, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(285, 285, 285))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(359, 359, 359)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnAgregarEstacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnComprar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(337, 337, 337)
+                .addComponent(btnAgregarEstacion)
+                .addGap(18, 18, 18)
+                .addComponent(btnDeshacer, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 314, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbxParadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAgregarEstacion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnComprar)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnComprar)
+                    .addComponent(btnAgregarEstacion)
+                    .addComponent(btnDeshacer, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36))
         );
 
         getContentPane().add(jPanel3);
@@ -171,6 +178,7 @@ public class CrearRuta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAgregarEstacion;
     private javax.swing.JButton btnComprar;
+    public javax.swing.JButton btnDeshacer;
     public javax.swing.JButton btnVolver;
     public javax.swing.JComboBox<String> cbxParadas;
     private javax.swing.JLabel jLabel1;

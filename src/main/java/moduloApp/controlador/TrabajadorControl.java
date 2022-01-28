@@ -21,10 +21,10 @@ import trainSim.controlador.TrainSim;
 public class TrabajadorControl {
     private InicioTrabajador inicio = new InicioTrabajador();
     private Logger logger = new Logger();
-    private Integer userID;
     private Trabajador currentUser;
     private TrainSim ts;  
-    
+    private ColaMensajes cola;
+    Serializador serial = new Serializador();
     
     public TrabajadorControl(Trabajador User) throws IOException {
         try{
@@ -83,7 +83,49 @@ public class TrabajadorControl {
         *   Accion del boton ver mensajes
         */
         inicio.btnMensajes.addActionListener((ActionEvent a) -> {
+            VerColaMensajes vcm = new VerColaMensajes();
+            inicio.setVisible(false);
+            vcm.setVisible(true);
+            vcm.setLocationRelativeTo(null);
             
+            cola = serial.deserializarMensajes("recursos\\colaMensajes.ser");
+            
+            if(cola.getLongitud()>0){
+                            
+                vcm.lblRemitente.setText(cola.getCola().getEmisor());
+                vcm.lblNoLeidos.setText(cola.getLongitud().toString());
+                vcm.txtMensaje.setText(cola.getCola().getAsunto()+": \n"+cola.getCola().getMensaje());
+
+                vcm.btnSiguiente.addActionListener((ActionEvent e) -> {
+                            //desencolar y mostrar siguiente mensaje
+                    //deserializar archivo
+                    cola=serial.deserializarMensajes("recursos\\colaMensajes.ser");
+                    //desencolar
+                    int respuesta = JOptionPane.showConfirmDialog(null, "Se quitara el mensaje actual de la cola. Asegurese de enviar una respuesta",
+                                        "Confirmar", JOptionPane.OK_CANCEL_OPTION,
+                                        JOptionPane.INFORMATION_MESSAGE);
+
+                    if(respuesta==0){
+                        cola.eliminarPrimero();
+                    }else{
+                        //nada
+                    }
+
+                    //re-serializar
+                    serial.serializarMensajes("recursos\\colaMensajes.ser",cola);
+                    vcm.dispose();
+                    inicio.setVisible(true);
+                });
+            }else{
+                JOptionPane.showMessageDialog(null, "No hay mensajes");
+                vcm.dispose();
+                inicio.setVisible(true);
+            }
+            
+            vcm.btnVolver.addActionListener((ActionEvent e) -> {
+                vcm.dispose();
+                inicio.setVisible(true);
+            });
         });
         
         /*
@@ -97,7 +139,7 @@ public class TrabajadorControl {
             //accion del boton crear usuario
             cu.btnCrear.addActionListener((ActionEvent c) -> {
                 
-                //Falta validacioon de campos
+                //Falta validacion de campos
                 
                 String nombre = cu.txtNombre.getText();
                 int dni = Integer.parseInt(cu.txtDNI.getText());

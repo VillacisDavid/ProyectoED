@@ -3,14 +3,15 @@ package moduloApp.controlador;
 //Dependencias
 import java.awt.event.ActionEvent;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 
 //  Modulo actual: Cliente
-import moduloApp.vista.InicioCliente;
-import moduloApp.modelo.Cliente;
+import moduloApp.vista.*;
+import moduloApp.modelo.*;
 
 //  Importar para volver al login al cerrar sesion
 import moduloLogin.controlador.LoginControl;
-import moduloLogin.modelo.Logger;
+
 
 //  Importar Simulador
 import trainSim.controlador.TrainSim;
@@ -21,12 +22,12 @@ import trainSim.controlador.TrainSim;
  */
 public class ClienteControl{
     private InicioCliente inicio = new InicioCliente();
-    private Logger logger = new Logger();
     private Cliente currentUser;
     private TrainSim ts;
+    private ColaMensajes cola;
+    Serializador serial = new Serializador();
     
     public ClienteControl(Cliente User) throws IOException{
-        
         try{
             ts = new TrainSim();
         }catch(IOException e){
@@ -84,8 +85,35 @@ public class ClienteControl{
         *   Accion del boton Contactenos
         */
         inicio.btnContacto.addActionListener((ActionEvent a) -> {
+            EnviarMensajes env = new EnviarMensajes();
             inicio.setVisible(false);
-            inicio.setVisible(true);
+            env.setVisible(true);
+            env.setLocationRelativeTo(null);
+            
+            env.btnEnviar.addActionListener((ActionEvent e) -> {
+                //Recoger campos
+                String asunto = env.txtAsunto.getText();
+                String mensaje = env.txtMensaje.getText();
+                String emisor = currentUser.getNombre();
+                
+                Mensaje m = new Mensaje(emisor,asunto,mensaje,null);
+                
+                    //Encolar mensaje
+                //deserializar archivo
+                cola=serial.deserializarMensajes("recursos\\colaMensajes.ser");
+                //encolar
+                cola.insertar(m);
+                JOptionPane.showMessageDialog(null, "Mensaje enviado");
+                //serializar
+                serial.serializarMensajes("recursos\\colaMensajes.ser", cola);
+                env.dispose();
+                inicio.setVisible(true);
+            });
+            
+            env.btnVolver.addActionListener((ActionEvent e) -> {
+                env.dispose();
+                inicio.setVisible(true);
+            });
             
         });
         
