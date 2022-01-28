@@ -3,12 +3,17 @@ package trainSim.modelo;
 
 /**
  *
- * @author David
+ * @author Katherine Ambrosio, Cristhian Hinostroza y David Villacis
  * Inserta y elimina del inicio
  */
 public class stackEstaciones {
     private EstacionTren stack;
     private Integer longitud;
+    // new nodo
+    // push
+    // pop delete
+    // pop
+    // top
     
     public stackEstaciones(){
         stack = null;

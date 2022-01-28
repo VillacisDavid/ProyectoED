@@ -89,19 +89,18 @@ public class TrabajadorControl {
             inicio.setVisible(false);
             vcm.setVisible(true);
             vcm.setLocationRelativeTo(null);
-            
+            //deserializar archivo
             cola = serial.deserializarMensajes("recursos\\colaMensajes.ser");
             
             if(cola.getLongitud()>0){
-                            
+                //set labels
                 vcm.lblRemitente.setText(cola.getCola().getEmisor());
                 vcm.lblNoLeidos.setText(cola.getLongitud().toString());
+                //set mensaje
                 vcm.txtMensaje.setText(cola.getCola().getAsunto()+": \n"+cola.getCola().getMensaje());
 
                 vcm.btnSiguiente.addActionListener((ActionEvent e) -> {
                             //desencolar y mostrar siguiente mensaje
-                    //deserializar archivo
-                    cola=serial.deserializarMensajes("recursos\\colaMensajes.ser");
                     //desencolar
                     int respuesta = JOptionPane.showConfirmDialog(null, "Se quitara el mensaje actual de la cola. Asegurese de enviar una respuesta",
                                         "Confirmar", JOptionPane.OK_CANCEL_OPTION,
@@ -109,8 +108,6 @@ public class TrabajadorControl {
 
                     if(respuesta==0){
                         cola.eliminarPrimero();
-                    }else{
-                        //nada
                     }
 
                     //re-serializar

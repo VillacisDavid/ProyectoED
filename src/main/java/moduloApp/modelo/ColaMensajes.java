@@ -9,6 +9,10 @@ public class ColaMensajes implements java.io.Serializable {
     
     private Mensaje cola;
     private Integer longitud=0;
+    //new nodo
+    //insertar (al final)
+    //eliminar primero
+    //get primero
     
     public ColaMensajes(){
         cola = null;

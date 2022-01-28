@@ -22,6 +22,7 @@ public class Grafo {
     }
     
     public void abrirGrafo() throws IOException{
+        //Recupera la informacion del grafo almacenado en recursos\grafo1.txt
         try{
             // Poner direccion del archivo grafo1.txt
             File f = new File("recursos\\grafo1.txt");//"C:\\Users\\david\\OneDrive\\Documents\\ED\\ProyectoED\\src\\main\\java\\recursos\\grafo1.txt");

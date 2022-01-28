@@ -89,6 +89,7 @@ public class ClienteControl{
             env.setVisible(true);
             env.setLocationRelativeTo(null);
             
+            //enviar mensaje (encolar)
             env.btnEnviar.addActionListener((ActionEvent e) -> {
                 //Recoger campos
                 String asunto = env.txtAsunto.getText();
